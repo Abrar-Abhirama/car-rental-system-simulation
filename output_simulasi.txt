@@ -1,0 +1,354 @@
+===================================================================
+   CAR-RENTAL SYSTEM SIMULATION (PROBLEM 2.38 - AVERILL M. LAW)    
+   TAHAP 9: IMPLEMENTASI STATISTIK SIMULASI LENGKAP               
+===================================================================
+Bus Capacity           : 20 passengers
+Unloading Time         : Uniform(16.0, 24.0) s per passenger
+Loading Time           : Uniform(25.0, 35.0) s per passenger
+Minimum Stop Time      : 300.0 detik (5.0 menit)
+Target Simulation Time : 288000.0 detik (80.0 jam)
+===================================================================
+
+
+-------------------------------------------------------------------
+[t=     0.00 s] BUS ARRIVAL at Location 3 (Bus onboard: 0, Queue: 0)
+[t=     0.00 s]   -> No passengers to unload (Duration = 0.00 s)
+[t=     0.00 s]   -> End Unloading. Available seats = 20, Queue = 0 -> Loading 0 passenger(s)
+[t=     0.00 s]   -> No passengers loaded (Duration = 0.00 s)
+[t=     0.00 s]   -> End Loading. Bus onboard = 0. Waiting until min stop time (t=300.00 s)
+[t=    78.41 s] PASSENGER ARRIVAL : Passenger 1 at Loc 3 -> Dest 1 (Queue: 1)
+[t=   202.77 s] PASSENGER ARRIVAL : Passenger 2 at Loc 3 -> Dest 1 (Queue: 2)
+[t=   235.28 s] PASSENGER ARRIVAL : Passenger 3 at Loc 1 -> Dest 3 (Queue: 1)
+[t=   290.67 s] PASSENGER ARRIVAL : Passenger 4 at Loc 3 -> Dest 2 (Queue: 3)
+[t=   300.00 s] BUS DEPARTURE from Loc 3 -> Loc 1 | Stop Time: 300.00 s | Onboard: 0/20 | Travel: 540.0 s
+[t=   360.88 s] PASSENGER ARRIVAL : Passenger 5 at Loc 1 -> Dest 3 (Queue: 2)
+[t=   362.88 s] PASSENGER ARRIVAL : Passenger 6 at Loc 3 -> Dest 2 (Queue: 4)
+
+-------------------------------------------------------------------
+[t=   840.00 s] BUS ARRIVAL at Location 1 (Bus onboard: 0, Queue: 4)
+[t=   840.00 s]   -> No passengers to unload (Duration = 0.00 s)
+[t=   840.00 s]   -> End Unloading. Available seats = 20, Queue = 4 -> Loading 4 passenger(s)
+[t=   840.00 s]   -> Loading duration = 128.47 s (Finish at t=968.47)
+[t=   968.47 s]   -> End Loading. Bus onboard = 4. Waiting until min stop time (t=1140.00 s)
+[t=  1140.00 s] BUS DEPARTURE from Loc 1 -> Loc 2 | Stop Time: 300.00 s | Onboard: 4/20 | Travel: 120.0 s
+
+-------------------------------------------------------------------
+[t=  1260.00 s] BUS ARRIVAL at Location 2 (Bus onboard: 4, Queue: 2)
+[t=  1260.00 s]   -> No passengers to unload (Duration = 0.00 s)
+[t=  1260.00 s]   -> End Unloading. Available seats = 16, Queue = 2 -> Loading 2 passenger(s)
+[t=  1260.00 s]   -> Loading duration = 51.49 s (Finish at t=1311.49)
+[t=  1311.49 s]   -> End Loading. Bus onboard = 6. Waiting until min stop time (t=1560.00 s)
+[t=  1560.00 s] BUS DEPARTURE from Loc 2 -> Loc 3 | Stop Time: 300.00 s | Onboard: 6/20 | Travel: 540.0 s
+
+-------------------------------------------------------------------
+[t=  2100.00 s] BUS ARRIVAL at Location 3 (Bus onboard: 6, Queue: 20)
+[t=  2100.00 s]   -> Unloading 6 passenger(s), Duration = 117.18 s (Finish at t=2217.18)
+[t=  2217.18 s]   [UNLOADED] Passenger 3 (Origin 1 -> Dest 3, TIS = 1981.90 s)
+[t=  2217.18 s]   [UNLOADED] Passenger 5 (Origin 1 -> Dest 3, TIS = 1856.30 s)
+[t=  2217.18 s]   [UNLOADED] Passenger 9 (Origin 1 -> Dest 3, TIS = 1641.42 s)
+[t=  2217.18 s]   [UNLOADED] Passenger 11 (Origin 1 -> Dest 3, TIS = 1394.64 s)
+[t=  2217.18 s]   [UNLOADED] Passenger 10 (Origin 2 -> Dest 3, TIS = 1616.94 s)
+[t=  2217.18 s]   [UNLOADED] Passenger 15 (Origin 2 -> Dest 3, TIS = 1131.21 s)
+[t=  2217.18 s]   -> End Unloading. Available seats = 20, Queue = 20 -> Loading 20 passenger(s)
+[t=  2217.18 s]   -> Loading duration = 601.02 s (Finish at t=2818.20)
+[t=  2818.20 s]   -> End Loading. Bus onboard = 20. Service >= 300 s, departing immediately!
+[t=  2818.20 s] BUS DEPARTURE from Loc 3 -> Loc 1 | Stop Time: 718.20 s | Onboard: 20/20 | Travel: 540.0 s
+
+-------------------------------------------------------------------
+[t=  3358.20 s] BUS ARRIVAL at Location 1 (Bus onboard: 20, Queue: 16)
+[t=  3358.20 s]   -> Unloading 14 passenger(s), Duration = 266.94 s (Finish at t=3625.14)
+[t=  3625.14 s]   [UNLOADED] Passenger 1 (Origin 3 -> Dest 1, TIS = 3546.72 s)
+[t=  3625.14 s]   [UNLOADED] Passenger 2 (Origin 3 -> Dest 1, TIS = 3422.36 s)
+[t=  3625.14 s]   [UNLOADED] Passenger 8 (Origin 3 -> Dest 1, TIS = 3145.02 s)
+[t=  3625.14 s]   [UNLOADED] Passenger 14 (Origin 3 -> Dest 1, TIS = 2583.47 s)
+[t=  3625.14 s]   [UNLOADED] Passenger 18 (Origin 3 -> Dest 1, TIS = 2302.10 s)
+[t=  3625.14 s]   [UNLOADED] Passenger 19 (Origin 3 -> Dest 1, TIS = 2247.17 s)
+[t=  3625.14 s]   [UNLOADED] Passenger 21 (Origin 3 -> Dest 1, TIS = 2110.22 s)
+[t=  3625.14 s]   [UNLOADED] Passenger 23 (Origin 3 -> Dest 1, TIS = 2070.51 s)
+[t=  3625.14 s]   [UNLOADED] Passenger 25 (Origin 3 -> Dest 1, TIS = 1993.57 s)
+[t=  3625.14 s]   [UNLOADED] Passenger 27 (Origin 3 -> Dest 1, TIS = 1888.21 s)
+[t=  3625.14 s]   [UNLOADED] Passenger 31 (Origin 3 -> Dest 1, TIS = 1681.10 s)
+[t=  3625.14 s]   [UNLOADED] Passenger 33 (Origin 3 -> Dest 1, TIS = 1646.89 s)
+[t=  3625.14 s]   [UNLOADED] Passenger 35 (Origin 3 -> Dest 1, TIS = 1614.23 s)
+[t=  3625.14 s]   [UNLOADED] Passenger 37 (Origin 3 -> Dest 1, TIS = 1572.57 s)
+[t=  3625.14 s]   -> End Unloading. Available seats = 14, Queue = 17 -> Loading 14 passenger(s)
+[t=  3625.14 s]   -> Loading duration = 404.35 s (Finish at t=4029.49)
+[t=  4029.49 s]   -> End Loading. Bus onboard = 20. Service >= 300 s, departing immediately!
+[t=  4029.49 s] BUS DEPARTURE from Loc 1 -> Loc 2 | Stop Time: 671.29 s | Onboard: 20/20 | Travel: 120.0 s
+
+-------------------------------------------------------------------
+[t=  4149.49 s] BUS ARRIVAL at Location 2 (Bus onboard: 20, Queue: 10)
+[t=  4149.49 s]   -> Unloading 6 passenger(s), Duration = 120.88 s (Finish at t=4270.37)
+[t=  4270.37 s]   [UNLOADED] Passenger 4 (Origin 3 -> Dest 2, TIS = 3979.71 s)
+[t=  4270.37 s]   [UNLOADED] Passenger 6 (Origin 3 -> Dest 2, TIS = 3907.49 s)
+[t=  4270.37 s]   [UNLOADED] Passenger 7 (Origin 3 -> Dest 2, TIS = 3868.09 s)
+[t=  4270.37 s]   [UNLOADED] Passenger 12 (Origin 3 -> Dest 2, TIS = 3314.76 s)
+[t=  4270.37 s]   [UNLOADED] Passenger 28 (Origin 3 -> Dest 2, TIS = 2505.10 s)
+[t=  4270.37 s]   [UNLOADED] Passenger 29 (Origin 3 -> Dest 2, TIS = 2373.60 s)
+[t=  4270.37 s]   -> End Unloading. Available seats = 6, Queue = 10 -> Loading 6 passenger(s)
+[t=  4270.37 s]   -> Loading duration = 173.07 s (Finish at t=4443.45)
+[t=  4443.45 s]   -> End Loading. Bus onboard = 20. Waiting until min stop time (t=4449.49 s)
+[t=  4449.49 s] BUS DEPARTURE from Loc 2 -> Loc 3 | Stop Time: 300.00 s | Onboard: 20/20 | Travel: 540.0 s
+
+-------------------------------------------------------------------
+[t=  4989.49 s] BUS ARRIVAL at Location 3 (Bus onboard: 20, Queue: 22)
+[t=  4989.49 s]   -> Unloading 20 passenger(s), Duration = 399.37 s (Finish at t=5388.86)
+[t=  5388.86 s]   [UNLOADED] Passenger 13 (Origin 1 -> Dest 3, TIS = 4391.23 s)
+[t=  5388.86 s]   [UNLOADED] Passenger 16 (Origin 1 -> Dest 3, TIS = 4302.84 s)
+[t=  5388.86 s]   [UNLOADED] Passenger 22 (Origin 1 -> Dest 3, TIS = 3869.07 s)
+[t=  5388.86 s]   [UNLOADED] Passenger 24 (Origin 1 -> Dest 3, TIS = 3822.27 s)
+[t=  5388.86 s]   [UNLOADED] Passenger 26 (Origin 1 -> Dest 3, TIS = 3710.00 s)
+[t=  5388.86 s]   [UNLOADED] Passenger 30 (Origin 1 -> Dest 3, TIS = 3458.16 s)
+[t=  5388.86 s]   [UNLOADED] Passenger 39 (Origin 1 -> Dest 3, TIS = 3186.89 s)
+[t=  5388.86 s]   [UNLOADED] Passenger 41 (Origin 1 -> Dest 3, TIS = 3117.52 s)
+[t=  5388.86 s]   [UNLOADED] Passenger 43 (Origin 1 -> Dest 3, TIS = 2909.87 s)
+[t=  5388.86 s]   [UNLOADED] Passenger 44 (Origin 1 -> Dest 3, TIS = 2885.65 s)
+[t=  5388.86 s]   [UNLOADED] Passenger 50 (Origin 1 -> Dest 3, TIS = 2693.83 s)
+[t=  5388.86 s]   [UNLOADED] Passenger 54 (Origin 1 -> Dest 3, TIS = 2502.17 s)
+[t=  5388.86 s]   [UNLOADED] Passenger 55 (Origin 1 -> Dest 3, TIS = 2461.03 s)
+[t=  5388.86 s]   [UNLOADED] Passenger 56 (Origin 1 -> Dest 3, TIS = 2405.00 s)
+[t=  5388.86 s]   [UNLOADED] Passenger 17 (Origin 2 -> Dest 3, TIS = 4105.55 s)
+[t=  5388.86 s]   [UNLOADED] Passenger 20 (Origin 2 -> Dest 3, TIS = 3947.96 s)
+[t=  5388.86 s]   [UNLOADED] Passenger 32 (Origin 2 -> Dest 3, TIS = 3442.06 s)
+[t=  5388.86 s]   [UNLOADED] Passenger 34 (Origin 2 -> Dest 3, TIS = 3386.57 s)
+[t=  5388.86 s]   [UNLOADED] Passenger 36 (Origin 2 -> Dest 3, TIS = 3373.83 s)
+[t=  5388.86 s]   [UNLOADED] Passenger 38 (Origin 2 -> Dest 3, TIS = 3228.94 s)
+[t=  5388.86 s]   -> End Unloading. Available seats = 20, Queue = 24 -> Loading 20 passenger(s)
+[t=  5388.86 s]   -> Loading duration = 604.48 s (Finish at t=5993.35)
+[t=  5993.35 s]   -> End Loading. Bus onboard = 20. Service >= 300 s, departing immediately!
+[t=  5993.35 s] BUS DEPARTURE from Loc 3 -> Loc 1 | Stop Time: 1003.86 s | Onboard: 20/20 | Travel: 540.0 s
+
+-------------------------------------------------------------------
+[t=  6533.35 s] BUS ARRIVAL at Location 1 (Bus onboard: 20, Queue: 9)
+[t=  6533.35 s]   -> Unloading 10 passenger(s), Duration = 194.06 s (Finish at t=6727.41)
+[t=  6727.41 s]   [UNLOADED] Passenger 42 (Origin 3 -> Dest 1, TIS = 4391.42 s)
+[t=  6727.41 s]   [UNLOADED] Passenger 45 (Origin 3 -> Dest 1, TIS = 4165.06 s)
+[t=  6727.41 s]   [UNLOADED] Passenger 49 (Origin 3 -> Dest 1, TIS = 4052.00 s)
+[t=  6727.41 s]   [UNLOADED] Passenger 52 (Origin 3 -> Dest 1, TIS = 3906.55 s)
+[t=  6727.41 s]   [UNLOADED] Passenger 53 (Origin 3 -> Dest 1, TIS = 3871.25 s)
+[t=  6727.41 s]   [UNLOADED] Passenger 64 (Origin 3 -> Dest 1, TIS = 3238.82 s)
+[t=  6727.41 s]   [UNLOADED] Passenger 65 (Origin 3 -> Dest 1, TIS = 3194.42 s)
+[t=  6727.41 s]   [UNLOADED] Passenger 69 (Origin 3 -> Dest 1, TIS = 2648.57 s)
+[t=  6727.41 s]   [UNLOADED] Passenger 74 (Origin 3 -> Dest 1, TIS = 2406.53 s)
+[t=  6727.41 s]   [UNLOADED] Passenger 76 (Origin 3 -> Dest 1, TIS = 2249.26 s)
+[t=  6727.41 s]   -> End Unloading. Available seats = 10, Queue = 10 -> Loading 10 passenger(s)
+[t=  6727.41 s]   -> Loading duration = 304.56 s (Finish at t=7031.97)
+[t=  7031.97 s]   -> End Loading. Bus onboard = 20. Service >= 300 s, departing immediately!
+[t=  7031.97 s] BUS DEPARTURE from Loc 1 -> Loc 2 | Stop Time: 498.62 s | Onboard: 20/20 | Travel: 120.0 s
+
+-------------------------------------------------------------------
+[t=  7151.97 s] BUS ARRIVAL at Location 2 (Bus onboard: 20, Queue: 13)
+[t=  7151.97 s]   -> Unloading 10 passenger(s), Duration = 205.58 s (Finish at t=7357.55)
+[t=  7357.55 s]   [UNLOADED] Passenger 40 (Origin 3 -> Dest 2, TIS = 5094.45 s)
+[t=  7357.55 s]   [UNLOADED] Passenger 46 (Origin 3 -> Dest 2, TIS = 4748.18 s)
+[t=  7357.55 s]   [UNLOADED] Passenger 47 (Origin 3 -> Dest 2, TIS = 4744.23 s)
+[t=  7357.55 s]   [UNLOADED] Passenger 51 (Origin 3 -> Dest 2, TIS = 4615.94 s)
+[t=  7357.55 s]   [UNLOADED] Passenger 59 (Origin 3 -> Dest 2, TIS = 4156.24 s)
+[t=  7357.55 s]   [UNLOADED] Passenger 60 (Origin 3 -> Dest 2, TIS = 4144.18 s)
+[t=  7357.55 s]   [UNLOADED] Passenger 67 (Origin 3 -> Dest 2, TIS = 3342.42 s)
+[t=  7357.55 s]   [UNLOADED] Passenger 71 (Origin 3 -> Dest 2, TIS = 3238.78 s)
+[t=  7357.55 s]   [UNLOADED] Passenger 72 (Origin 3 -> Dest 2, TIS = 3188.32 s)
+[t=  7357.55 s]   [UNLOADED] Passenger 73 (Origin 3 -> Dest 2, TIS = 3134.70 s)
+[t=  7357.55 s]   -> End Unloading. Available seats = 10, Queue = 13 -> Loading 10 passenger(s)
+[t=  7357.55 s]   -> Loading duration = 293.42 s (Finish at t=7650.97)
+[t=  7650.97 s]   -> End Loading. Bus onboard = 20. Service >= 300 s, departing immediately!
+[t=  7650.97 s] BUS DEPARTURE from Loc 2 -> Loc 3 | Stop Time: 499.00 s | Onboard: 20/20 | Travel: 540.0 s
+
+-------------------------------------------------------------------
+[t=  8190.97 s] BUS ARRIVAL at Location 3 (Bus onboard: 20, Queue: 24)
+[t=  8190.97 s]   -> Unloading 20 passenger(s), Duration = 408.15 s (Finish at t=8599.12)
+[t=  8599.12 s]   [UNLOADED] Passenger 57 (Origin 1 -> Dest 3, TIS = 5531.87 s)
+[t=  8599.12 s]   [UNLOADED] Passenger 58 (Origin 1 -> Dest 3, TIS = 5440.01 s)
+[t=  8599.12 s]   [UNLOADED] Passenger 63 (Origin 1 -> Dest 3, TIS = 5113.44 s)
+[t=  8599.12 s]   [UNLOADED] Passenger 66 (Origin 1 -> Dest 3, TIS = 4614.72 s)
+[t=  8599.12 s]   [UNLOADED] Passenger 68 (Origin 1 -> Dest 3, TIS = 4542.85 s)
+[t=  8599.12 s]   [UNLOADED] Passenger 75 (Origin 1 -> Dest 3, TIS = 4122.22 s)
+[t=  8599.12 s]   [UNLOADED] Passenger 80 (Origin 1 -> Dest 3, TIS = 3901.30 s)
+[t=  8599.12 s]   [UNLOADED] Passenger 89 (Origin 1 -> Dest 3, TIS = 2935.50 s)
+[t=  8599.12 s]   [UNLOADED] Passenger 91 (Origin 1 -> Dest 3, TIS = 2796.15 s)
+[t=  8599.12 s]   [UNLOADED] Passenger 102 (Origin 1 -> Dest 3, TIS = 1940.71 s)
+[t=  8599.12 s]   [UNLOADED] Passenger 48 (Origin 2 -> Dest 3, TIS = 5935.18 s)
+[t=  8599.12 s]   [UNLOADED] Passenger 61 (Origin 2 -> Dest 3, TIS = 5232.92 s)
+[t=  8599.12 s]   [UNLOADED] Passenger 62 (Origin 2 -> Dest 3, TIS = 5181.06 s)
+[t=  8599.12 s]   [UNLOADED] Passenger 70 (Origin 2 -> Dest 3, TIS = 4504.98 s)
+[t=  8599.12 s]   [UNLOADED] Passenger 78 (Origin 2 -> Dest 3, TIS = 4036.95 s)
+[t=  8599.12 s]   [UNLOADED] Passenger 79 (Origin 2 -> Dest 3, TIS = 3986.52 s)
+[t=  8599.12 s]   [UNLOADED] Passenger 82 (Origin 2 -> Dest 3, TIS = 3510.67 s)
+[t=  8599.12 s]   [UNLOADED] Passenger 84 (Origin 2 -> Dest 3, TIS = 3442.04 s)
+[t=  8599.12 s]   [UNLOADED] Passenger 85 (Origin 2 -> Dest 3, TIS = 3424.58 s)
+[t=  8599.12 s]   [UNLOADED] Passenger 88 (Origin 2 -> Dest 3, TIS = 3002.24 s)
+[t=  8599.12 s]   -> End Unloading. Available seats = 20, Queue = 27 -> Loading 20 passenger(s)
+[t=  8599.12 s]   -> Loading duration = 592.28 s (Finish at t=9191.40)
+[t=  9191.40 s]   -> End Loading. Bus onboard = 20. Service >= 300 s, departing immediately!
+[t=  9191.40 s] BUS DEPARTURE from Loc 3 -> Loc 1 | Stop Time: 1000.43 s | Onboard: 20/20 | Travel: 540.0 s
+
+-------------------------------------------------------------------
+[t=  9731.40 s] BUS ARRIVAL at Location 1 (Bus onboard: 20, Queue: 9)
+[t=  9731.40 s]   -> Unloading 15 passenger(s), Duration = 289.12 s (Finish at t=10020.51)
+[t= 10020.51 s]   [UNLOADED] Passenger 77 (Origin 3 -> Dest 1, TIS = 5526.23 s)
+[t= 10020.51 s]   [UNLOADED] Passenger 81 (Origin 3 -> Dest 1, TIS = 5249.86 s)
+[t= 10020.51 s]   [UNLOADED] Passenger 86 (Origin 3 -> Dest 1, TIS = 4780.76 s)
+[t= 10020.51 s]   [UNLOADED] Passenger 87 (Origin 3 -> Dest 1, TIS = 4544.60 s)
+[t= 10020.51 s]   [UNLOADED] Passenger 90 (Origin 3 -> Dest 1, TIS = 4220.22 s)
+[t= 10020.51 s]   [UNLOADED] Passenger 92 (Origin 3 -> Dest 1, TIS = 4204.24 s)
+[t= 10020.51 s]   [UNLOADED] Passenger 93 (Origin 3 -> Dest 1, TIS = 4146.33 s)
+[t= 10020.51 s]   [UNLOADED] Passenger 94 (Origin 3 -> Dest 1, TIS = 4041.57 s)
+[t= 10020.51 s]   [UNLOADED] Passenger 96 (Origin 3 -> Dest 1, TIS = 3880.39 s)
+[t= 10020.51 s]   [UNLOADED] Passenger 97 (Origin 3 -> Dest 1, TIS = 3874.92 s)
+[t= 10020.51 s]   [UNLOADED] Passenger 98 (Origin 3 -> Dest 1, TIS = 3804.74 s)
+[t= 10020.51 s]   [UNLOADED] Passenger 101 (Origin 3 -> Dest 1, TIS = 3379.63 s)
+[t= 10020.51 s]   [UNLOADED] Passenger 103 (Origin 3 -> Dest 1, TIS = 3218.79 s)
+[t= 10020.51 s]   [UNLOADED] Passenger 105 (Origin 3 -> Dest 1, TIS = 2988.21 s)
+[t= 10020.51 s]   [UNLOADED] Passenger 108 (Origin 3 -> Dest 1, TIS = 2863.43 s)
+[t= 10020.51 s]   -> End Unloading. Available seats = 15, Queue = 10 -> Loading 10 passenger(s)
+[t= 10020.51 s]   -> Loading duration = 300.58 s (Finish at t=10321.10)
+[t= 10321.10 s]   -> End Loading. Bus onboard = 15. Service >= 300 s, departing immediately!
+[t= 10321.10 s] BUS DEPARTURE from Loc 1 -> Loc 2 | Stop Time: 589.70 s | Onboard: 15/20 | Travel: 120.0 s
+
+-------------------------------------------------------------------
+[t= 10441.10 s] BUS ARRIVAL at Location 2 (Bus onboard: 15, Queue: 13)
+[t= 10441.10 s]   -> Unloading 5 passenger(s), Duration = 96.27 s (Finish at t=10537.37)
+[t= 10537.37 s]   [UNLOADED] Passenger 83 (Origin 3 -> Dest 2, TIS = 5448.63 s)
+[t= 10537.37 s]   [UNLOADED] Passenger 95 (Origin 3 -> Dest 2, TIS = 4546.75 s)
+[t= 10537.37 s]   [UNLOADED] Passenger 100 (Origin 3 -> Dest 2, TIS = 3900.15 s)
+[t= 10537.37 s]   [UNLOADED] Passenger 109 (Origin 3 -> Dest 2, TIS = 3224.85 s)
+[t= 10537.37 s]   [UNLOADED] Passenger 110 (Origin 3 -> Dest 2, TIS = 3149.98 s)
+[t= 10537.37 s]   -> End Unloading. Available seats = 10, Queue = 13 -> Loading 10 passenger(s)
+[t= 10537.37 s]   -> Loading duration = 300.25 s (Finish at t=10837.62)
+[t= 10837.62 s]   -> End Loading. Bus onboard = 20. Service >= 300 s, departing immediately!
+[t= 10837.62 s] BUS DEPARTURE from Loc 2 -> Loc 3 | Stop Time: 396.52 s | Onboard: 20/20 | Travel: 540.0 s
+
+[t=288000.00 s] EVENT_END_SIMULATION tercapai! Menghentikan event loop.
+
+===================================================================
+               LAPORAN RESMI HASIL SIMULASI FINAL                  
+            (Problem 2.38 - Simulation Modeling & Analysis)       
+===================================================================
+
+===================================================================
+1. SIMULATION SUMMARY
+===================================================================
+  Simulation time             :  288000.00 seconds (80.00 hours)
+  Total passenger arrivals    :       3778 passengers
+    - Arrivals at Location 1  :       1133 passengers
+    - Arrivals at Location 2  :        789 passengers
+    - Arrivals at Location 3  :       1856 passengers
+  Completed passengers        :       3546 passengers
+  Passengers remaining in Q1  :         96 passengers
+  Passengers remaining in Q2  :         60 passengers
+  Passengers remaining in Q3  :         56 passengers
+  Total remaining in queues   :        212 passengers
+  Passengers remaining on bus :         20 passengers
+  Total bus stops visited     :        272 stops
+  Total completed bus loops   :         90 loops
+===================================================================
+
+===================================================================
+2. QUEUE LENGTH STATISTICS (Time-Average & Maximum)
+===================================================================
+  Location 1 (Terminal 1 ):
+    Time-average Queue Length :  61.2931 passengers
+    Maximum Queue Length      :      111 passengers
+    Final Queue Length        :       96 passengers
+  Location 2 (Terminal 2 ):
+    Time-average Queue Length :  21.1194 passengers
+    Maximum Queue Length      :       62 passengers
+    Final Queue Length        :       60 passengers
+  Location 3 (Car Rental ):
+    Time-average Queue Length :  43.3702 passengers
+    Maximum Queue Length      :       87 passengers
+    Final Queue Length        :       56 passengers
+
+===================================================================
+3. QUEUE DELAY STATISTICS (Minutes & Seconds)
+===================================================================
+  Location 1 (Terminal 1 ) [Observations: 1037]:
+    Average Queue Delay       : 16055.14 s (267.59 min)
+    Maximum Queue Delay       : 28000.28 s (466.67 min)
+  Location 2 (Terminal 2 ) [Observations: 729]:
+    Average Queue Delay       :  7475.29 s (124.59 min)
+    Maximum Queue Delay       : 20858.98 s (347.65 min)
+  Location 3 (Car Rental ) [Observations: 1800]:
+    Average Queue Delay       :  6798.22 s (113.30 min)
+    Maximum Queue Delay       : 13478.74 s (224.65 min)
+
+===================================================================
+4. BUS OCCUPANCY STATISTICS (Time-Average & Maximum)
+===================================================================
+  Time-average Bus Occupancy  :  19.7866 passengers
+  Maximum Bus Occupancy       :       20 passengers (Capacity: 20)
+  Final Bus Occupancy         :       20 passengers
+
+===================================================================
+5. BUS STOP TIME STATISTICS (Minutes & Seconds)
+===================================================================
+  Location 1 (Terminal 1 ) [Visits: 90]:
+    Minimum Stop Time         :   300.00 s (  5.00 min)
+    Average Stop Time         :   577.63 s (  9.63 min)
+    Maximum Stop Time         :   807.02 s ( 13.45 min)
+  Location 2 (Terminal 2 ) [Visits: 90]:
+    Minimum Stop Time         :   300.00 s (  5.00 min)
+    Average Stop Time         :   417.40 s (  6.96 min)
+    Maximum Stop Time         :   663.42 s ( 11.06 min)
+  Location 3 (Car Rental ) [Visits: 91]:
+    Minimum Stop Time         :   300.00 s (  5.00 min)
+    Average Stop Time         :   986.13 s ( 16.44 min)
+    Maximum Stop Time         :  1040.09 s ( 17.33 min)
+
+===================================================================
+6. BUS LOOP TIME STATISTICS (Location 3 -> Location 3)
+===================================================================
+  Total Completed Loops       : 90 loops
+    Minimum Loop Time         :  2100.00 s ( 35.00 min)
+    Average Loop Time         :  3181.00 s ( 53.02 min)
+    Maximum Loop Time         :  3304.90 s ( 55.08 min)
+
+===================================================================
+7. PASSENGER TIME IN SYSTEM (By Route & Overall)
+===================================================================
+  OVERALL PASSENGERS [Total Delivered: 3546]:
+    Minimum Time in System    :  1131.21 s ( 18.85 min)
+    Average Time in System    : 11232.97 s (187.22 min)
+    Maximum Time in System    : 29816.34 s (496.94 min)
+  -----------------------------------------------------------------
+  Route Location 1 -> 3 (Terminal 1 -> Car Rental) [Delivered: 1037]:
+    Minimum Time in System    :  1394.64 s ( 23.24 min)
+    Average Time in System    : 17870.81 s (297.85 min)
+    Maximum Time in System    : 29816.34 s (496.94 min)
+  Route Location 2 -> 3 (Terminal 2 -> Car Rental) [Delivered: 729]:
+    Minimum Time in System    :  1131.21 s ( 18.85 min)
+    Average Time in System    :  8675.41 s (144.59 min)
+    Maximum Time in System    : 22046.61 s (367.44 min)
+  Route Location 3 -> 1 (Car Rental -> Terminal 1) [Delivered: 1038]:
+    Minimum Time in System    :  1572.57 s ( 26.21 min)
+    Average Time in System    :  8115.39 s (135.26 min)
+    Maximum Time in System    : 14766.74 s (246.11 min)
+  Route Location 3 -> 2 (Car Rental -> Terminal 2) [Delivered: 742]:
+    Minimum Time in System    :  2373.60 s ( 39.56 min)
+    Average Time in System    :  8830.11 s (147.17 min)
+    Maximum Time in System    : 15487.70 s (258.13 min)
+
+===================================================================
+8. SANITY CHECKS
+===================================================================
+  Simulation time = 288000 s           : PASS (Actual: 288000.00 s)
+  Maximum occupancy <= 20              : PASS (Actual: 20 passengers)
+  Minimum stop time >= 300 s           : PASS (L1=300.00 s, L2=300.00 s, L3=300.00 s)
+  Queue delay >= 0                     : PASS (Min L1=17.47, L2=15.53, L3=164.61)
+  Time in system >= 0                  : PASS (Min TIS: 1131.21 s)
+  Loop time >= 2100 s                  : PASS (Min Loop: 2100.00 s)
+  -----------------------------------------------------------------
+  Sanity Checks Overall Status         : ALL PASS
+
+===================================================================
+9. CONSERVATION CHECK
+===================================================================
+  Total arrivals                       : 3778 passengers
+  Completed passengers                 : 3546 passengers
+  Passengers in queues (Q1+Q2+Q3)      : 212 passengers (96 + 60 + 56)
+  Passengers on bus                    : 20 passengers
+  Sum (Completed + Queues + Bus)       : 3778 passengers
+  Difference (Arrivals - Sum)          : 0
+  Conservation Status                  : PASS (EXACT MATCH)
+===================================================================
+
