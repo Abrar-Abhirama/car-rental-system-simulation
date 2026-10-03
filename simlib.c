@@ -1,17 +1,10 @@
-/* simlib.c
-   Implementation of SIMLIB (C version)
-   Based on Simulation Modeling and Analysis by Averill M. Law & W. David Kelton
-*/
-
 #include "simlib.h"
 
-/* Global variables */
 int   next_event_type = 0;
 float sim_time = 0.0f;
 float transfer[MAX_ATTR + 1];
 int   list_size[MAX_LIST + 1];
 
-/* Internal node structure for dynamic doubly-linked lists */
 typedef struct node {
     float attr[MAX_ATTR + 1];
     struct node *pred;
@@ -26,7 +19,7 @@ typedef struct {
 
 static ListHeader lists[MAX_LIST + 1];
 
-/* Random number generator seeds array (streams 1 to 100) */
+// random number generator seeds
 static long zrng[101] = {
              0,
     1973272912,  281629770,   20006270, 1280689831, 2096730327,  654572301,
@@ -48,12 +41,10 @@ static long zrng[101] = {
      998877665,  443322110,  135792468,  246813579
 };
 
-/* LCG Constants (Law & Kelton standard) */
 #define MODLUS 2147483647L
 #define MULT1  24112L
 #define MULT2  26143L
 
-/* Statistical accumulators storage */
 #define MAX_SVAR 25
 #define MAX_TVAR 25
 
@@ -72,9 +63,7 @@ static struct {
     float min;
 } t_vars[MAX_TVAR + 1];
 
-/* -------------------------------------------------------------------------- */
-/* Initialization */
-/* -------------------------------------------------------------------------- */
+// inisialisasi simlib
 void init_simlib(void)
 {
     int i;
@@ -86,7 +75,6 @@ void init_simlib(void)
     }
 
     for (i = 1; i <= MAX_LIST; ++i) {
-        /* Free any existing nodes */
         Node *curr = lists[i].head;
         while (curr != NULL) {
             Node *tmp = curr;
@@ -115,9 +103,7 @@ void init_simlib(void)
     }
 }
 
-/* -------------------------------------------------------------------------- */
-/* Generalized List Management */
-/* -------------------------------------------------------------------------- */
+// insert ke list
 void list_file(int option, int list)
 {
     int a;
@@ -141,7 +127,6 @@ void list_file(int option, int list)
     new_node->succ = NULL;
 
     if (lists[list].size == 0) {
-        /* List is currently empty */
         lists[list].head = new_node;
         lists[list].tail = new_node;
     } else if (option == FIRST) {
@@ -153,7 +138,6 @@ void list_file(int option, int list)
         lists[list].tail->succ = new_node;
         lists[list].tail = new_node;
     } else if (option == INCREASING) {
-        /* Ordered by attribute 1 ascending (used for event list) */
         Node *curr = lists[list].head;
         while (curr != NULL && curr->attr[1] <= new_node->attr[1]) {
             curr = curr->succ;
@@ -173,7 +157,6 @@ void list_file(int option, int list)
             curr->pred = new_node;
         }
     } else if (option == DECREASING) {
-        /* Ordered by attribute 1 descending */
         Node *curr = lists[list].head;
         while (curr != NULL && curr->attr[1] >= new_node->attr[1]) {
             curr = curr->succ;
@@ -198,6 +181,7 @@ void list_file(int option, int list)
     list_size[list] = lists[list].size;
 }
 
+// remove dari list
 void list_remove(int option, int list)
 {
     int a;
@@ -220,7 +204,7 @@ void list_remove(int option, int list)
         } else {
             lists[list].tail = NULL;
         }
-    } else { /* LAST */
+    } else {
         rem_node = lists[list].tail;
         lists[list].tail = rem_node->pred;
         if (lists[list].tail != NULL) {
@@ -239,9 +223,7 @@ void list_remove(int option, int list)
     list_size[list] = lists[list].size;
 }
 
-/* -------------------------------------------------------------------------- */
-/* Timing and Event Scheduling */
-/* -------------------------------------------------------------------------- */
+// advance simulation time ke event berikutnya
 void timing(void)
 {
     if (lists[LIST_EVENT].size == 0) {
@@ -261,12 +243,12 @@ void timing(void)
     next_event_type = (int) transfer[EVENT_TYPE];
 }
 
+// schedule event
 void event_schedule(float time_value, int event_type)
 {
     float save_transfer[MAX_ATTR + 1];
     int a;
 
-    /* Save caller's transfer buffer */
     for (a = 1; a <= MAX_ATTR; ++a) {
         save_transfer[a] = transfer[a];
     }
@@ -276,18 +258,17 @@ void event_schedule(float time_value, int event_type)
 
     list_file(INCREASING, LIST_EVENT);
 
-    /* Restore caller's transfer buffer */
     for (a = 1; a <= MAX_ATTR; ++a) {
         transfer[a] = save_transfer[a];
     }
 }
 
+// cancel event
 void event_cancel(int event_type)
 {
     Node *curr = lists[LIST_EVENT].head;
     while (curr != NULL) {
         if ((int) curr->attr[EVENT_TYPE] == event_type) {
-            /* Remove this node */
             if (curr->pred != NULL) {
                 curr->pred->succ = curr->succ;
             } else {
@@ -307,9 +288,7 @@ void event_cancel(int event_type)
     }
 }
 
-/* -------------------------------------------------------------------------- */
-/* Random Variate Generation */
-/* -------------------------------------------------------------------------- */
+// random generator
 float lcgrand(int stream)
 {
     long zi, lowprd, hi31;
@@ -361,9 +340,6 @@ float uniform(float a, float b, int stream)
     return a + lcgrand(stream) * (b - a);
 }
 
-/* -------------------------------------------------------------------------- */
-/* Statistical Functions */
-/* -------------------------------------------------------------------------- */
 void sampst(float value, int var)
 {
     if (var < 1 || var > MAX_SVAR) return;

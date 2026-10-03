@@ -1,8 +1,3 @@
-/* simlib.h
-   Header file for SIMLIB (C version)
-   Based on Simulation Modeling and Analysis by Averill M. Law
-*/
-
 #ifndef SIMLIB_H
 #define SIMLIB_H
 
@@ -15,13 +10,11 @@
 extern "C" {
 #endif
 
-/* Global variables */
 extern int next_event_type;
 extern float sim_time;
 extern float transfer[MAX_ATTR + 1];
 extern int list_size[MAX_LIST + 1];
 
-/* Function declarations */
 void init_simlib(void);
 void list_file(int option, int list);
 void list_remove(int option, int list);
@@ -46,4 +39,4 @@ void out_filest(FILE *unit, int low_list, int high_list);
 }
 #endif
 
-#endif /* SIMLIB_H */
+#endif
